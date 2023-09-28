@@ -1,0 +1,18 @@
+version: '3.2'
+services:
+  logidze-exemple-redis:
+    image: 'redis:4.0-alpine'
+    ports:
+      - "6379:6379"
+
+  logidze-exemple-db:
+    image: postgis/postgis:14-3.2-alpine
+    environment:
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - "logidze-exemple-db-data:/var/lib/postgresql/data"
+
+volumes:
+  logidze-exemple-db-data:
