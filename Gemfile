@@ -62,3 +62,6 @@ gem "foreman"
 # haml
 gem "haml-rails"
 gem "html2haml"
+
+# bootstrap
+gem 'bootstrap', '~> 5.3.1'
