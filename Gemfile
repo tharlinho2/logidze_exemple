@@ -65,3 +65,5 @@ gem "html2haml"
 
 # bootstrap
 gem 'bootstrap', '~> 5.3.1'
+
+gem "devise", "~> 4.9"

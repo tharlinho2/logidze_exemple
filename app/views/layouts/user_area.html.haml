@@ -1,0 +1,27 @@
+!!!
+%html.h-100
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title LogidzeExemple
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"}
+    %script{:src => "https://code.jquery.com/jquery-1.9.1.js"}
+    %script{:src => "https://code.jquery.com/jquery-3.5.0.min.js"}
+
+    %link{:href => "https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css", :rel => "stylesheet", :type => "text/css"}
+    %script{:src => "https://cdn.jsdelivr.net/npm/toastify-js", :type => "text/javascript"}
+
+    = stylesheet_link_tag '//fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined'
+  %body
+    .d-flex.h-100
+      %div
+        = render partial: 'layouts/user_area/drawer'
+      .w-100
+        = render partial: 'layouts/user_area/navbar'
+        .container.p-4
+          = yield
