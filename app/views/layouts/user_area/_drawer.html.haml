@@ -1,33 +1,20 @@
-.p-3.bg-light.h-100{:style => "width: 280px;"}
-  %a.d-flex.align-items-center.mb-3.mb-md-0.me-md-auto.link-dark.text-decoration-none{:href => "/"}
-    %svg.bi.me-2{:height => "32", :width => "40"}
-      %use{"xlink:href" => "#bootstrap"}
-    %span.fs-4 Sidebar
+.p-3.bg-white.border-end.h-100{:style => "width: 280px;"}
+  .d-flex.align-items-center.mb-3.mb-md-0.me-md-auto.link-dark.text-decoration-none
+    %span.material-icons-outlined.fs-2= 'account_circle'
+    .d-flex.flex-column.ms-1
+      %span.ps-1= current_user.first_name
+      %span.ps-1.small= current_user.email
   %hr/
 
-  %ul.nav.nav-pills.flex-column.mb-auto
-    %li.nav-item
-      %a.nav-link.active{"aria-current" => "page", :href => "#"}
-        %svg.bi.me-2{:height => "16", :width => "16"}
-          %use{"xlink:href" => "#home"}
-        Home
-    %li
-      %a.nav-link.link-dark{:href => "#"}
-        %svg.bi.me-2{:height => "16", :width => "16"}
-          %use{"xlink:href" => "#speedometer2"}
-        Dashboard
-    %li
-      %a.nav-link.link-dark{:href => "#"}
-        %svg.bi.me-2{:height => "16", :width => "16"}
-          %use{"xlink:href" => "#table"}
-        Orders
-    %li
-      %a.nav-link.link-dark{:href => "#"}
-        %svg.bi.me-2{:height => "16", :width => "16"}
-          %use{"xlink:href" => "#grid"}
-        Products
-    %li
-      %a.nav-link.link-dark{:href => "#"}
-        %svg.bi.me-2{:height => "16", :width => "16"}
-          %use{"xlink:href" => "#people-circle"}
-        Customers
+  .d-flex.flex-column.justify-content-between{style: "height: 90%"}
+    %ul.nav.nav-pills.flex-column
+      %li.nav-item
+        = link_to user_area_home_index_path, class: "nav-link #{set_active_drawer_item_class(active_drawer_path?('home'))}" do
+          %svg.bi.me-2{:height => "16", :width => "16"}
+            %use{"xlink:href" => "#home"}
+          Home
+      %li
+        %a.nav-link{:href => "#"}
+          %svg.bi.me-2{:height => "16", :width => "16"}
+            %use{"xlink:href" => "#speedometer2"}
+          Pessoas

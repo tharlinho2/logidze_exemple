@@ -1,0 +1,82 @@
+---
+pt-BR:
+  true: Sim
+  false: Não
+  time:
+    am: ''
+    formats:
+      default: '%d/%m/%Y %H:%M'
+      long: '%d de %B de %Y, %H:%M'
+      short: '%d de %B, %H:%M'
+      custom: '%d/%m/%Y %H:%M'
+      date: '%d/%m/%Y'
+      report: '%d_%m_%Y__%H_%M_%S'
+      timestamp_nozone: '%d/%m/%Y %H:%M:%S'
+      month_and_year: '%m/%Y'
+      default_time: '%H:%M'
+
+  global:
+    saving: "Aguarde..."
+    save: "Salvar"
+    cancel: "Cancelar"
+    edit: "Editar"
+    destroy: "Deletar"
+    editing: "Editar %{title}"
+    new: "Novo %{title}"
+    messages:
+      create:
+        created_f: "%{obj} cadastrada com sucesso."
+        created_m: "%{obj} cadastrado com sucesso."
+      update:
+        updated_f: "%{obj} atualizada com sucesso."
+        updated_m: "%{obj} atualizado com sucesso."
+      destroy:
+        destroyed_f: "%{obj} removida com sucesso."
+        destroyed_m: "%{obj} removido com sucesso."
+
+  activerecord:
+    errors:
+      models:
+        account:
+          attributes:
+            subdomain:
+              reserved: "já está reservado"
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+
+
+    attributes:
+      default:
+        created_at: Criado em
+        updated_at: Atualizado em
+      user: &default
+        email: Email
+        first_name: Nome
+        last_name: Sobrenome
+        cpf: CPF
+        address: Endereço
+        status_cd: Situação
+        type_cd: Tipo de Usuário
+        partner: Administrador
+        city: Cidade
+        password: Senha
+        password_confirmation: Confirmar Senha
+
+  shared:
+    masks:
+      doc_id: "000.000.000-00"
+      doc_id_lp: "00.000.000/0000-00"
+      postcode: "00.0000-000"
+      phone_number: "(00) 0000-0000"
+      amount: "###.###.###.##0,00"
+      decimal: "###.###.###.##0,00"
+      quantity: "###.###.###.##0"
+      number_with_precision_3: "###.###.##0,000"
+      percentage: "##0"
+
+  partner_area:
+    drivers:
+      index:
+        teste: Teste driver né pai

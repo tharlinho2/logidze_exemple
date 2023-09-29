@@ -66,4 +66,15 @@ gem "html2haml"
 # bootstrap
 gem 'bootstrap', '~> 5.3.1'
 
+# auth
 gem "devise", "~> 4.9"
+
+# i18n
+gem 'devise-i18n'
+gem 'rails-i18n'
+
+# enums
+gem 'simple_enum'
+
+# pagination
+gem "pagy"
