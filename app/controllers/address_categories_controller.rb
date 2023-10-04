@@ -4,7 +4,7 @@ class AddressCategoriesController < ApplicationController
   # GET /address_categories or /address_categories.json
   def index
     address = AddressCategory.all.order(created_at: :desc)
-    @pagy, @records = pagy(address, items: 3)
+    @pagy, @records = pagy(address, items: 6)
   end
 
   # GET /address_categories/1 or /address_categories/1.json
