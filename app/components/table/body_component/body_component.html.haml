@@ -1,0 +1,6 @@
+= content_tag :tbody, options.merge(class: '') do
+  - if rows.present?
+    - rows.each do |row|
+      = row
+
+  = content

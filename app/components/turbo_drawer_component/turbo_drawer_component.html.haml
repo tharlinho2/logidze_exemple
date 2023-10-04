@@ -1,0 +1,7 @@
+= turbo_frame_tag :drawer do
+  #offcanvasRight.offcanvas.offcanvas-end{data: { controller: "turbo-drawer", "turbo-drawer-target" => "drawer" }, "aria-labelledby" => "offcanvasRightLabel", :tabindex => "-1"}
+    .offcanvas-header
+      %h5#offcanvasRightLabel.offcanvas-title= @title
+      %button.btn-close{ data: { action: "click->turbo-drawer#close" }, "aria-label" => "Close", "data-bs-dismiss" => "offcanvas", :type => "button"}
+    .offcanvas-body
+      = content

@@ -1,0 +1,38 @@
+= tag.div id: "flashs_turbo", data: { "flash-messages" => "#{JSON.dump @messages&.to_a}"}
+
+:javascript
+  var colors = {
+    notice: "#5477f5",
+    alert: "#f44336",
+    error: "#f44336"
+  }
+
+  var times = {
+    notice: 2000,
+    alert: 4000,
+    error: 5000
+  }
+
+  JSON.parse(document.getElementById('flashs_turbo').dataset.flashMessages).forEach((flash) => {
+    const [type, messages] = flash
+
+    if (Array.isArray(messages)) {
+      messages.reverse().forEach((sms) => {
+        toastify(sms);
+      })
+    } else {
+      toastify(messages);
+    }
+
+    function toastify(sms){
+      Toastify({
+        text: sms,
+        duration: times[type],
+        close: true,
+        backgroundColor: colors[type],
+        stopOnFocus: true,
+        position: "center",
+        gravity: "bottom"
+      }).showToast()
+    }
+  })

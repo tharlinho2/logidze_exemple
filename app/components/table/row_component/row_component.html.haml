@@ -1,0 +1,11 @@
+= content_tag @tag, options do
+  - if cols.present?
+    - cols.each do |col|
+      = col
+
+  - elsif col_hs.present?
+    - col_hs.each do |col|
+      = col
+
+  - else
+    = content

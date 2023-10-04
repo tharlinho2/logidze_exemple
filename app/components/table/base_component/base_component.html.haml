@@ -1,0 +1,16 @@
+= content_tag :table, options.merge({ class: 'w-100 table table-hover'}) do
+  = content_tag :div, class: 'd-flex justify-content-between align-items-center mb-3' do
+    = content_tag :h5 do
+      = @title
+
+    - if button.present?
+      = button
+
+  - if header.present?
+    = header
+
+  = body
+  = content
+
+- if pagination.present?
+  = pagination

@@ -80,3 +80,5 @@ gem "pagy"
 
 # hotwire - turbo
 gem 'hotwire-rails'
+
+gem "view_component"
