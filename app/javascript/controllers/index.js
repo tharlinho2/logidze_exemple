@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import TurboDrawerController from "./turbo_drawer_controller";
+application.register("turbo-drawer", TurboDrawerController)

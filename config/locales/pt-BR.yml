@@ -22,7 +22,10 @@ pt-BR:
     edit: "Editar"
     destroy: "Deletar"
     editing: "Editar %{title}"
-    new: "Novo %{title}"
+    new_n: "Novo %{title}"
+    new_f: "Nova %{title}"
+    new: "Novo"
+    show: "Ver"
     messages:
       create:
         created_f: "%{obj} cadastrada com sucesso."
@@ -39,12 +42,14 @@ pt-BR:
       models:
         account:
           attributes:
-            subdomain:
-              reserved: "já está reservado"
+
     models:
       user:
         one: Usuário
         other: Usuários
+      address_category:
+        one:  Categoria de Endereço
+        other:  Categorias de Endereço
 
 
     attributes:
@@ -55,28 +60,7 @@ pt-BR:
         email: Email
         first_name: Nome
         last_name: Sobrenome
-        cpf: CPF
-        address: Endereço
-        status_cd: Situação
-        type_cd: Tipo de Usuário
-        partner: Administrador
-        city: Cidade
         password: Senha
         password_confirmation: Confirmar Senha
-
-  shared:
-    masks:
-      doc_id: "000.000.000-00"
-      doc_id_lp: "00.000.000/0000-00"
-      postcode: "00.0000-000"
-      phone_number: "(00) 0000-0000"
-      amount: "###.###.###.##0,00"
-      decimal: "###.###.###.##0,00"
-      quantity: "###.###.###.##0"
-      number_with_precision_3: "###.###.##0,000"
-      percentage: "##0"
-
-  partner_area:
-    drivers:
-      index:
-        teste: Teste driver né pai
+      address_category:
+        name: Nome

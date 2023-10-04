@@ -9,7 +9,7 @@
   .d-flex.flex-column.justify-content-between{style: "height: 90%"}
     %ul.nav.nav-pills.flex-column
       %li.nav-item
-        = link_to user_area_home_index_path, class: "nav-link #{set_active_drawer_item_class(active_drawer_path?('home'))}" do
+        = link_to home_index_path, class: "nav-link #{set_active_drawer_item_class(active_drawer_path?('home'))}" do
           %svg.bi.me-2{:height => "16", :width => "16"}
             %use{"xlink:href" => "#home"}
           Home
@@ -18,3 +18,8 @@
           %svg.bi.me-2{:height => "16", :width => "16"}
             %use{"xlink:href" => "#speedometer2"}
           Pessoas
+      %li
+        = link_to :address_categories, class: "nav-link #{set_active_drawer_item_class(active_drawer_path?('address_categories'))}" do
+          %svg.bi.me-2{:height => "16", :width => "16"}
+            %use{"xlink:href" => "#speedometer2"}
+          Categorias de Endereço

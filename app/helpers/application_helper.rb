@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   def attr_message(object, attribute)
     object&.errors&.full_messages_for(attribute)&.first
   end
@@ -8,6 +10,6 @@ module ApplicationHelper
   end
 
   def set_active_drawer_item_class(value)
-    value ? "active" : "link-dark"
+    value ? "active" : "bg-light"
   end
 end
