@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, path: 'user_area'
+  devise_for :users
 
-  root to: redirect('/user_area')
+  root to: "home#index"
 
-  namespace :user_area do
-    root to: "home#index"
-
-    get 'home/index'
-  end
+  resources :home, only: [:index]
+  resources :address_categories
 end

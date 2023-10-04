@@ -1,0 +1,12 @@
+= render Table::BaseComponent.new(title: "Testes") do |table|
+  - table.with_button link: [:new, :address_category], title: 'Novo Endereço', options: { data: { turbo_frame: :drawer } }
+  - table.with_header do |header|
+    - header.with_row do |row|
+      - row.with_col_h { 'Nome' }
+      - row.with_col_h { 'Criado em' }
+      - row.with_col_h { "" }
+
+  - table.with_body options: { id: :address_categories } do
+    = render @records
+
+  - table.with_pagination(pagination: @pagy)
