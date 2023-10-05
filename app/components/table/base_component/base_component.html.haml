@@ -1,7 +1,10 @@
-= content_tag :div, class: 'card', style: 'height: 93%' do
-  = content_tag :div, class: 'card-header d-flex justify-content-between align-items-start bg-white pt-3', style: 'height: 80px' do
+= content_tag :div, class: 'card', style: 'height: 100%' do
+  = content_tag :div, class: 'card-header hstack gap-3 align-items-start bg-white pt-3 w-100', style: 'height: 80px' do
     = content_tag :h5 do
       = @title
+
+    = content_tag :div, class: 'ms-auto' do
+      = search
 
     - if button.present?
       = button

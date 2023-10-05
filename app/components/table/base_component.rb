@@ -6,6 +6,7 @@ module Table
     renders_one :body, Table::BodyComponent
     renders_one :button, Table::ButtonComponent
     renders_one :pagination, Table::PaginationComponent
+    renders_one :search, Table::SearchComponent
 
     def initialize(title: nil, options: {})
       @title = title

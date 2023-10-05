@@ -8,6 +8,9 @@
   - row.with_col(options: {style: 'min-width: 150px'}) { address.district_name }
   - row.with_col(options: {style: 'min-width: 150px'}) { translate_enum(address, :address_type) }
   - row.with_col(options: {style: 'min-width: 110px'}) { address.address_category.name }
-  - row.with_col( options: { class: 'text-end text-nowrap' } ) do
-    = link_to t('global.edit'), [:edit, address ], class: "text-decoration-none", data: { turbo_frame: :drawer }
-    = link_to t('global.destroy'), [address], method: :delete, class: "text-decoration-none", data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" }
+  - row.with_col do
+    = link_to [:edit, address ], class: "text-decoration-none text-secondary-emphasis", data: { turbo_frame: :drawer } do
+      %i.material-icons.material-icons-outlined= "edit"
+
+    = link_to [address], method: :delete, class: "text-danger", data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" } do
+      %i.material-icons.material-icons-outlined= "delete"

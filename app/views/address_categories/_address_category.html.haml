@@ -1,6 +1,13 @@
 = render Table::RowComponent.new(options: { style: 'height: 50px', id: dom_id(address_category) }) do |row|
   - row.with_col( options: { style: 'min-width: 180px' } ) { address_category.name }
   - row.with_col { l(address_category.created_at, format: :date) }
-  - row.with_col( options: { class: 'text-end' } ) do
-    = link_to t('global.edit'), [:edit, address_category ], class: "text-decoration-none", data: { turbo_frame: :drawer }
-    = link_to_unless address_category.has_addresses, t('global.destroy'), [address_category], method: :delete, class: "text-decoration-none", data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" }
+  - row.with_col do
+    = link_to [:edit, address_category ], class: "text-decoration-none text-secondary-emphasis", data: { turbo_frame: :drawer } do
+      %i.material-icons.material-icons-outlined= "edit"
+
+    - unless address_category.has_addresses
+      = link_to [address_category], method: :delete, class: "text-danger", data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" } do
+        %i.material-icons.material-icons-outlined= "delete"
+    - else
+      = link_to 'javascript:;', class: '' do
+        %i.material-icons.material-icons-outlined.text-muted= 'delete'
