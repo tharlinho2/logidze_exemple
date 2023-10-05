@@ -1,4 +1,4 @@
-.p-3.bg-white.border-end.h-100{:style => "width: 280px;"}
+.p-3.bg-white.border-end{style: "width: 400px; height: 100%"}
   .d-flex.align-items-center.mb-3.mb-md-0.me-md-auto.link-dark.text-decoration-none
     %span.material-icons-outlined.fs-2= 'account_circle'
     .d-flex.flex-column.ms-1
@@ -6,20 +6,19 @@
       %span.ps-1.small= current_user.email
   %hr/
 
-  .d-flex.flex-column.justify-content-between{style: "height: 90%"}
-    %ul.nav.nav-pills.flex-column
-      %li.nav-item
-        = link_to home_index_path, class: "nav-link #{set_active_drawer_item_class(active_drawer_path?('home'))}" do
-          %svg.bi.me-2{:height => "16", :width => "16"}
-            %use{"xlink:href" => "#home"}
-          Home
-      %li
-        %a.nav-link{:href => "#"}
-          %svg.bi.me-2{:height => "16", :width => "16"}
-            %use{"xlink:href" => "#speedometer2"}
-          Pessoas
-      %li
-        = link_to :address_categories, class: "nav-link #{set_active_drawer_item_class(active_drawer_path?('address_categories'))}" do
-          %svg.bi.me-2{:height => "16", :width => "16"}
-            %use{"xlink:href" => "#speedometer2"}
+  .d-flex.flex-column.justify-content-between{style: ""}
+    %ul.nav.nav-pills.flex-column.fw-semibold
+      %li.nav-item.mb-3
+        = link_to home_index_path, class: "nav-link d-flex #{set_active_drawer_item_class(active_drawer_path?('home'))}" do
+          %span.material-icons-outlined.me-2= 'home'
+          Início
+
+      %li.nav-item.mb-3
+        = link_to :addresses, class: "nav-link d-flex #{set_active_drawer_item_class(active_drawer_path?('addresses'))}" do
+          %span.material-icons-outlined.me-2= 'place'
+          Endereços
+
+      %li.nav-item.mb-3
+        = link_to :address_categories, class: "nav-link d-flex #{set_active_drawer_item_class(active_drawer_path?('address_categories'))}" do
+          %span.material-icons-outlined.me-2= 'category'
           Categorias de Endereço

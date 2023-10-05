@@ -1,0 +1,19 @@
+= render Table::BaseComponent.new(title: "Endereços") do |table|
+  - table.with_button link: [:new, :address], title: '+ Novo', options: { data: { turbo_frame: :drawer } }
+  - table.with_header do |header|
+    - header.with_row do |row|
+      - row.with_col_h { Address.human_attribute_name(:name) }
+      - row.with_col_h { Address.human_attribute_name(:state_name) }
+      - row.with_col_h { Address.human_attribute_name(:city_name) }
+      - row.with_col_h { Address.human_attribute_name(:address_line_1) }
+      - row.with_col_h { Address.human_attribute_name(:address_number) }
+      - row.with_col_h { Address.human_attribute_name(:address_line_2) }
+      - row.with_col_h { Address.human_attribute_name(:district_name) }
+      - row.with_col_h { Address.human_attribute_name(:address_type) }
+      - row.with_col_h { Address.human_attribute_name(:address_category) }
+      - row.with_col_h { "Ações" }
+
+  - table.with_body options: { id: :addresses } do
+    = render @records
+
+  - table.with_pagination(pagination: @pagy)

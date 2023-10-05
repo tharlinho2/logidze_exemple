@@ -1,11 +1,9 @@
 = form_for @address_category do |f|
   .form-row
-    .col.form-group
-      = f.label :name
-      = f.text_field :name, class: 'form-control', autofocus: true
-      .text-danger.small= attr_message(@address_category, :name)
+    = f.label :name
+    = f.text_field :name, class: 'form-control', autofocus: true
+    .text-danger.small= attr_message(@address_category, :name)
 
   .form-row.mt-4
-    .col-auto
-      = f.button :submit, class: 'btn btn-primary btn-sm me-2', data: { disable_with: t("global.saving") } do
-        = t('global.save')
+    = f.button :submit, class: 'btn btn-primary btn-sm me-2', data: { disable_with: t("global.saving") } do
+      = t('global.save')

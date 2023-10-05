@@ -1,10 +1,10 @@
-= render Table::BaseComponent.new(title: "Testes") do |table|
-  - table.with_button link: [:new, :address_category], title: 'Novo Endereço', options: { data: { turbo_frame: :drawer } }
+= render Table::BaseComponent.new(title: AddressCategory.model_name.human(count:2)) do |table|
+  - table.with_button link: [:new, :address_category], title: '+ Novo', options: { data: { turbo_frame: :drawer } }
   - table.with_header do |header|
     - header.with_row do |row|
-      - row.with_col_h { 'Nome' }
-      - row.with_col_h { 'Criado em' }
-      - row.with_col_h { "" }
+      - row.with_col_h { AddressCategory.human_attribute_name(:name) }
+      - row.with_col_h { AddressCategory.human_attribute_name(:created_at) }
+      - row.with_col_h { "Ações" }
 
   - table.with_body options: { id: :address_categories } do
     = render @records

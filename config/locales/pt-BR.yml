@@ -21,8 +21,8 @@ pt-BR:
     cancel: "Cancelar"
     edit: "Editar"
     destroy: "Deletar"
-    editing: "Editar %{title}"
-    new_n: "Novo %{title}"
+    editing: "Editando %{title}"
+    new_m: "Novo %{title}"
     new_f: "Nova %{title}"
     new: "Novo"
     show: "Ver"
@@ -50,6 +50,9 @@ pt-BR:
       address_category:
         one:  Categoria de Endereço
         other:  Categorias de Endereço
+      address:
+        one: Endereço
+        other: Endereços
 
 
     attributes:
@@ -64,3 +67,17 @@ pt-BR:
         password_confirmation: Confirmar Senha
       address_category:
         name: Nome
+        created_at: Criado em
+        updated_at: Atualizado em
+      address:
+        address_type: Tipo de Endereço
+        state_name: UF
+        city_name: Cidade
+        address_line_1: Endereço
+        address_line_2: Complemento
+        address_number: Número
+        district_name: Bairro
+        name: Nome do endereço
+        address_category: Categoria
+        created_at: Criado em
+        updated_at: Atualizado em

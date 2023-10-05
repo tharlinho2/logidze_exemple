@@ -1,16 +1,19 @@
-= content_tag :table, options.merge({ class: 'w-100 table table-hover'}) do
-  = content_tag :div, class: 'd-flex justify-content-between align-items-center mb-3' do
+= content_tag :div, class: 'card', style: 'height: 93%' do
+  = content_tag :div, class: 'card-header d-flex justify-content-between align-items-start bg-white pt-3', style: 'height: 80px' do
     = content_tag :h5 do
       = @title
 
     - if button.present?
       = button
 
-  - if header.present?
-    = header
+  = content_tag :div, class: 'table-responsive flex-fill' do
+    = content_tag :table, options.merge({ class: 'w-100 table table-hover table-sm'}) do
+      - if header.present?
+        = header
 
-  = body
-  = content
+      = body
+      = content
 
-- if pagination.present?
-  = pagination
+  = content_tag :div, class: 'card-footer' do
+    - if pagination.present?
+      = pagination

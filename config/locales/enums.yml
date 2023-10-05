@@ -1,0 +1,5 @@
+pt-BR:
+  enums:
+    address_type:
+      shipping: Entrega
+      billing: Cobrança

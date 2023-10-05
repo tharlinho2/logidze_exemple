@@ -69,8 +69,8 @@ gem 'bootstrap', '~> 5.3.1'
 gem "devise", "~> 4.9"
 
 # i18n
-gem 'devise-i18n'
 gem 'rails-i18n'
+gem 'devise-i18n'
 
 # enums
 gem 'simple_enum'
@@ -81,4 +81,8 @@ gem "pagy"
 # hotwire - turbo
 gem 'hotwire-rails'
 
+# components
 gem "view_component"
+
+# search
+gem "search_cop"
