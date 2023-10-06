@@ -1,24 +1,29 @@
-# README
+## Versões
+* ruby: 2.7.7
+* rails: 6.1
+* postgresql: 14-3.2
+* bootstrap: 5
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Instalando Sistema
 
-* Ruby version
+1. Primeiro execute
 
-* System dependencies
+    ```
+    bundle install
+    ```
 
-* Configuration
+2. Crie o banco de dados, migração
 
-* Database creation
+    ```
+    foreman start
+    ```
 
-* Database initialization
+3. Agora execute o projeto
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    ```
+    rails db:create
+    ```
+    ```
+    rails db:migrate
+    ```
