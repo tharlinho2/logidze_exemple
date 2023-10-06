@@ -1,4 +1,4 @@
 = form_tag @link, method: 'get', class: 'input-group rounded  mb-4' do
-  = text_field_tag @query_name, @query, class: 'form-control rounded shadow-none', placeholder: @title, type: 'text'
+  = text_field_tag @query_name, @query, class: 'form-control rounded shadow-none', placeholder: @title, type: 'search'
   = button_tag class: 'input-group-text border-0 bg-white', type: 'submit' do
     = content_tag :span, 'search', class: 'material-icons-outlined'

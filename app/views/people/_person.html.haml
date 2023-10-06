@@ -1,0 +1,12 @@
+= render Table::RowComponent.new(options: { style: 'height: 50px', id: dom_id(person) }) do |row|
+  - row.with_col(options: {style: 'min-width: 180px'}) { person.name }
+  - row.with_col(options: {style: 'min-width: 70px'})  { person.phone_number }
+  - row.with_col(options: {style: 'min-width: 180px'}) { person.mobile_phone_number }
+  - row.with_col(options: {style: 'min-width: 180px'}) { person.cpf }
+  - row.with_col(options: {style: 'min-width: 80px'})  { person.email }
+  - row.with_col(options: {class: 'text-end'}) do
+    = link_to [:edit, person ], class: "text-decoration-none text-secondary-emphasis", data: { turbo_frame: :drawer } do
+      %i.material-icons.material-icons-outlined= "edit"
+
+    = link_to person, class: "text-danger", data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" } do
+      %i.material-icons.material-icons-outlined= "delete"

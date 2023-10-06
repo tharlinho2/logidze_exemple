@@ -1,31 +1,36 @@
 = form_for @address do |f|
   .form-row.mb-3
-    = f.label :name
-    %i.text-danger *
+    .d-flex
+      = f.label :name
+      %i.text-danger *
     = f.text_field :name, class: 'form-control shadow-none', autofocus: true
     .text-danger.small= attr_message(@address, :name)
 
   .form-row.mb-3
-    = f.label :state_name
-    %i.text-danger *
-    = f.text_field :state_name, class: 'form-control shadow-none', autofocus: true
+    .d-flex
+      = f.label :state_name
+      %i.text-danger *
+    = f.text_field :state_name, class: 'form-control shadow-none'
     .text-danger.small= attr_message(@address, :state_name)
 
   .form-row.mb-3
-    = f.label :city_name
-    %i.text-danger *
+    .d-flex
+      = f.label :city_name
+      %i.text-danger *
     = f.text_field :city_name, class: 'form-control shadow-none'
     .text-danger.small= attr_message(@address, :city_name)
 
   .form-row.mb-3
-    = f.label :address_line_1
-    %i.text-danger *
+    .d-flex
+      = f.label :address_line_1
+      %i.text-danger *
     = f.text_field :address_line_1, class: 'form-control shadow-none'
     .text-danger.small= attr_message(@address, :address_line_1)
 
   .form-row.mb-3
-    = f.label :address_number
-    %i.text-danger *
+    .d-flex
+      = f.label :address_number
+      %i.text-danger *
     = f.text_field :address_number, class: 'form-control shadow-none'
     .text-danger.small= attr_message(@address, :address_number)
 
@@ -35,21 +40,24 @@
     .text-danger.small= attr_message(@address, :address_line_2)
 
   .form-row.mb-3
-    = f.label :district_name
-    %i.text-danger *
+    .d-flex
+      = f.label :district_name
+      %i.text-danger *
     = f.text_field :district_name, class: 'form-control shadow-none'
     .text-danger.small= attr_message(@address, :district_name)
 
   .form-row.mb-3
-    = f.label :address_type
-    %i.text-danger *
+    .d-flex
+      = f.label :address_type
+      %i.text-danger *
     = f.select :address_type, enum_option_pairs(Address, :address_type), {}, class: 'form-control shadow-none'
     .text-danger.small= attr_message(@address, :address_type)
 
   .form-row.mb-4
-    = f.label :address_category
-    - address_categories = AddressCategory.all.collect {|p| [ p.name, p.id ] }
-    %i.text-danger *
+    .d-flex
+      = f.label :address_category
+      - address_categories = AddressCategory.all.collect {|p| [ p.name, p.id ] }
+      %i.text-danger *
     = f.select :address_category_id, address_categories, {}, class: 'form-control shadow-none'
     .text-danger.small= attr_message(@address, :address_category_id)
 

@@ -1,0 +1,44 @@
+= form_for @person do |f|
+  .form-row.mb-3
+    .d-flex
+      = f.label :name
+      %i.text-danger *
+    = f.text_field :name, class: 'form-control shadow-none', autofocus: true
+    .text-danger.small= attr_message(@person, :name)
+
+  .form-row.mb-3
+    .d-flex
+      = f.label :phone_number
+      %span.text-danger *
+    = f.text_field :phone_number, class: 'form-control shadow-none'
+    .text-danger.small= attr_message(@person, :phone_number)
+
+  .form-row.mb-3
+    .d-flex
+      = f.label :mobile_phone_number
+      %i.text-danger *
+    = f.text_field :mobile_phone_number, class: 'form-control shadow-none'
+    .text-danger.small= attr_message(@person, :mobile_phone_number)
+
+  .form-row.mb-3
+    .d-flex
+      = f.label :cpf
+      %i.text-danger *
+    = f.text_field :cpf, id: "doc_cpf", class: 'form-control shadow-none'
+    .text-danger.small= attr_message(@person, :cpf)
+
+  .form-row.mb-4
+    .d-flex
+      = f.label :email
+      %i.text-danger *
+    = f.email_field :email, class: 'form-control shadow-none'
+    .text-danger.small= attr_message(@person, :email)
+
+  .form-row.mb-5
+    = f.button :submit, class: 'btn btn-primary btn-sm rounded-2', data: { disable_with: t("global.saving") } do
+      = t('global.save_with', { title: Person.model_name.human })
+
+:javascript
+  $('#doc_cpf').mask('000.000.000-00', {reverse: true});
+  $('#person_mobile_phone_number').mask('(00) 0000-0000');
+  $('#person_phone_number').mask('(00) 0000-0000');

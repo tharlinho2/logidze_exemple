@@ -14,11 +14,16 @@
           Início
 
       %li.nav-item.mb-3
+        = link_to :people, class: "nav-link d-flex #{set_active_drawer_item_class(active_drawer_path?('people'))}" do
+          %span.material-icons-outlined.me-2= 'groups'
+          = Person.model_name.human(count: 2)
+
+      %li.nav-item.mb-3
         = link_to :addresses, class: "nav-link d-flex #{set_active_drawer_item_class(active_drawer_path?('addresses'))}" do
           %span.material-icons-outlined.me-2= 'place'
-          Endereços
+          = Address.model_name.human(count: 2)
 
       %li.nav-item.mb-3
         = link_to :address_categories, class: "nav-link d-flex #{set_active_drawer_item_class(active_drawer_path?('address_categories'))}" do
           %span.material-icons-outlined.me-2= 'category'
-          Categorias de Endereço
+          = AddressCategory.model_name.human(count: 2)

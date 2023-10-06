@@ -54,7 +54,9 @@ pt-BR:
       address:
         one: Endereço
         other: Endereços
-
+      person:
+        one: Pessoa
+        other: Pessoas
 
     attributes:
       default:
@@ -80,5 +82,13 @@ pt-BR:
         district_name: Bairro
         name: Nome do endereço
         address_category: Categoria
+        created_at: Criado em
+        updated_at: Atualizado em
+      person:
+        name: Nome
+        phone_number: Telefone
+        mobile_phone_number: Celular
+        cpf: CPF
+        email: Email
         created_at: Criado em
         updated_at: Atualizado em
