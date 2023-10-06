@@ -12,14 +12,17 @@
     ```
     bundle install
     ```
-
-2. Crie o banco de dados, migração
+    ```
+    yarn install
+    ```
+   
+2. Agora execute o projeto
 
     ```
     foreman start
     ```
 
-3. Agora execute o projeto
+3. Crie o banco de dados, migração e seja feliz!
 
     ```
     rails db:create
