@@ -5,7 +5,7 @@
     = link_to [:edit, address_category ], class: "text-decoration-none text-secondary-emphasis", data: { turbo_frame: :drawer } do
       %i.material-icons.material-icons-outlined= "edit"
 
-    - unless address_category.has_addresses
+    - unless address_category.has_addresses?
       = link_to address_category, class: "text-danger", data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" } do
         %i.material-icons.material-icons-outlined= "delete"
     - else

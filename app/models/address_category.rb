@@ -4,7 +4,7 @@ class AddressCategory < ApplicationRecord
 
   has_many :addresses
 
-  def has_addresses
+  def has_addresses?
     addresses.any?
   end
 end
