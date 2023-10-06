@@ -4,6 +4,8 @@ class AddressesController < ApplicationController
   # GET /addresses or /addresses.json
   def index
     address = Address.all.order(created_at: :desc)
+    address = address.search(params[:q]) if params[:q].present?
+
     @pagy, @records = pagy(address, items: 10)
   end
 

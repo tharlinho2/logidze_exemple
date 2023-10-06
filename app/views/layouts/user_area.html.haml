@@ -19,7 +19,7 @@
 
     = stylesheet_link_tag '//fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined'
     = stylesheet_link_tag "//fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
-  %body.bg-light{style: 'overflow: hidden'}
+  %body{style: 'overflow: auto; background-color: rgb(243 244 244)'}
     .h-100.w-100
       = render partial: 'layouts/user_area/navbar'
       .d-flex.h-100.w-100.pt-5
@@ -27,7 +27,7 @@
         .p-4.w-100{style: 'overflow: auto'}
           = yield
 
-  = turbo_frame_tag :drawer
+    = turbo_frame_tag :drawer
 
-  = turbo_frame_tag :flash_messages do
-    = render AlertComponent.new(messages: flash)
+    = turbo_frame_tag :flash_messages do
+      = render AlertComponent.new(messages: flash)

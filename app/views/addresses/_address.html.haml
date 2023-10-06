@@ -1,8 +1,8 @@
 = render Table::RowComponent.new(options: { style: 'height: 50px', id: dom_id(address) }) do |row|
-  - row.with_col(options: {style: 'min-width: 150px'}) { address.name }
+  - row.with_col(options: {style: 'min-width: 180px'}) { address.name }
   - row.with_col(options: {style: 'min-width: 70px'})  { address.state_name }
-  - row.with_col(options: {style: 'min-width: 150px'}) { address.city_name }
-  - row.with_col(options: {style: 'min-width: 160px'}) { address.address_line_1 }
+  - row.with_col(options: {style: 'min-width: 180px'}) { address.city_name }
+  - row.with_col(options: {style: 'min-width: 180px'}) { address.address_line_1 }
   - row.with_col(options: {style: 'min-width: 80px'})  { address.address_number }
   - row.with_col(options: {style: 'min-width: 130px'}) { address.address_line_2 }
   - row.with_col(options: {style: 'min-width: 150px'}) { address.district_name }

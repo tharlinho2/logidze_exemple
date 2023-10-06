@@ -1,5 +1,6 @@
 class AddressCategory < ApplicationRecord
-  validates :name, presence: true
+  include AddressCategories::Validators
+  include AddressCategories::Search
 
   has_many :addresses
 

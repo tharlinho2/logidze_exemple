@@ -1,35 +1,42 @@
-%h2= t('.title', resource: resource.model_name.human)
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email)
-  .field
-    = f.label :password
-    %i
-      (#{t('.leave_blank_if_you_don_t_want_to_change_it')})
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em= t('devise.shared.minimum_password_length', count: @minimum_password_length)
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i
-      (#{t('.we_need_your_current_password_to_confirm_your_changes')})
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit t('.update')
-%h3= t('.cancel_my_account')
-%p
-  = t('.unhappy')
-  = button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete
-= link_to t('devise.shared.links.back'), :back
+= render TurboDrawerComponent.new(title: t('global.editing', title: resource.first_name)) do
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    .field
+      = f.label :first_name
+      = f.text_field :first_name, autofocus: true, class: 'form-control shadow-none'
+      .text-danger.small= attr_message(resource, :first_name)
+
+    .field.mt-3
+      = f.label :last_name
+      = f.text_field :last_name, class: 'form-control shadow-none'
+      .text-danger.small= attr_message(resource, :last_name)
+
+    .field.mt-3
+      = f.label :email
+      = f.email_field :email, autocomplete: "email", class: 'form-control shadow-none'
+
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %div= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email)
+
+    .field.mt-3
+      = f.label :password
+      %i.small (#{t('.leave_blank_if_you_don_t_want_to_change_it')})
+      = f.password_field :password, autocomplete: "new-password", class: 'form-control shadow-none'
+      - if @minimum_password_length
+        %em.small= t('devise.shared.minimum_password_length', count: @minimum_password_length)
+
+    .field.mt-3
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control shadow-none'
+
+    .field.mt-3
+      = f.label :current_password
+      %i.small (#{t('.we_need_your_current_password_to_confirm_your_changes')})
+      = f.password_field :current_password, autocomplete: "current-password", class: 'form-control shadow-none', required: true
+
+    .actions.mt-4.mb-3
+      = f.submit t('.update'), class: "btn btn-primary w-100", data: { disable_with: "Aguarde..." }
+
+  %h5= t('.cancel_my_account')
+  %p= t('.unhappy')
+
+  = button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: "btn btn-secondary btn-sm"

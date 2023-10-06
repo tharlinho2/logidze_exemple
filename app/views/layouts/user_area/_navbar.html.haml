@@ -1,13 +1,13 @@
-%nav.navbar.navbar-expand-lg.bg-white.border-bottom.position-fixed.w-100
+%nav.navbar.navbar-expand-lg.bg-white.border-bottom.w-100.position-absolute
   .container-fluid
-    %a.navbar-brand{:href => "#"} Audit
+    %a.navbar-brand.fw-bold{:href => "#"} AUDIT
 
-    .dropdown.dropstart
+    .dropdown.dropstart.z-3
       %span.material-icons-outlined.fs-2{style: 'cursor: pointer;', 'data-bs-toggle': 'dropdown', 'arial-expanded': false}= 'account_circle'
 
       %ul.dropdown-menu.mt-4
         %li
-          = link_to "Editar Conta", edit_user_registration_path, class: 'dropdown-item'
+          = link_to "Editar Conta", edit_user_registration_path, class: 'dropdown-item', data: { turbo_frame: :drawer }
         %li
           %hr.dropdown-divider/
         %li

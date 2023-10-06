@@ -26,6 +26,7 @@ pt-BR:
     new_f: "Nova %{title}"
     new: "Novo"
     show: "Ver"
+    save_with: "Salvar %{title}"
     messages:
       create:
         created_f: "%{obj} cadastrada com sucesso."

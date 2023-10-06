@@ -7,8 +7,9 @@ class ApplicationController < ActionController::Base
 
   protected
   def configure_permitted_parameters
-    signup_keys = %i[first_name last_name email]
+    signup_keys = %i[first_name last_name email password password_confirmation]
     devise_parameter_sanitizer.permit(:sign_up, keys: signup_keys)
+    devise_parameter_sanitizer.permit(:account_update, keys: signup_keys)
   end
 
   def layout_by_resource
